@@ -47,27 +47,30 @@ Outcome placeholders: For each choice, the script creates a placeholder next key
 
 **YAML output structure**
 The resulting YAML file will have the following structure for each chapter:
-yaml
-
 chapter_1:
-
-  text:
- 
-  The narrative text for the chapter goes here. 
-
-  It will contain multiple lines.
-
+  text: You awaken in a dense, mysterious forest. The morning mist conceals hidden
+    dangers, but also whispers of adventure.
   choices:
-
-  - option: Choice text 1
-
-    next: chapter_1_choice1
-
-  - option: Choice text 2
-
-    next: chapter_1_choice2
-
+  - option: Take the sword lying next to you.
+    next: chapter1_sword
+  - option: Cast a protective spell from your spellbook.
+    next: chapter1_spell
 chapter_2:
+  text: Clutching your sword, you push forward through the thick underbrush. Shadows
+    shift and unseen creatures watch.
+  choices:
+  - option: Follow the narrow path deeper into the woods.
+    next: chapter2_woods
+  - option: Climb a tree to survey your surroundings.
+    next: chapter2_tree
+chapter_3:
+  text: You raise your hands and recite the incantation. A glow surrounds you, warming
+    your spirit but draining your mana.
+  choices:
+  - option: Use the magic to illuminate the path
+    next: chapter3_spell
+  - option: Save your energy and tread carefully.
+    next: chapter3_careful
 
   ... and so on for each chapter
 
