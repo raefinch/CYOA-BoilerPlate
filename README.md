@@ -24,7 +24,7 @@ Users can save their progress multiple times for different playthroughs and load
 
 
 
-##Story Parser How to Use
+##Story Parser How to Use##
 This script parses a plain text file, such as a novel or a story, and converts it into a structured YAML format. It uses regular expressions (re) to identify chapters and player choices within the text. The output is a YAML file that represents the story's flow, which can be useful for developing text-based adventure games or other interactive narrative applications.
 
 **Script overview**
@@ -36,7 +36,7 @@ save_structure_as_yaml(structure, filename): This function takes the Python dict
 
 if __name__ == "__main__":: This block demonstrates the script's usage. It reads text from a file named TestText.txt, processes it, and saves the output to a new file named TestText.yaml.
 
-###Technical details
+###Technical details###
 
 **How text is parsed**
 
