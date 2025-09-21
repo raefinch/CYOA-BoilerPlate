@@ -53,16 +53,26 @@ The resulting YAML file will have the following structure for each chapter:
 yaml
 
 chapter_1:
+
   text: |
+
     # The narrative text for the chapter goes here.
+
     # It will contain multiple lines.
+
   choices:
+
   - option: Choice text 1
+
     next: chapter_1_choice1
+
   - option: Choice text 2
+
     next: chapter_1_choice2
+
 chapter_2:
-  # ... and so on for each chapter
+
+  ... and so on for each chapter
     
 This guide helps users quickly understand how to run your script, prepare input files, and how the output fits into the overall app development workflow.
 =======
