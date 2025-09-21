@@ -1,0 +1,10 @@
+class Choice:
+    def __init__(self, description, next_node_id, attribute_changes=None):
+        """
+        description: Text shown for the choice
+        next_node_id: ID of the next StoryNode in the tree after this choice
+        attribute_changes: dict of character attribute changes {attr: delta}
+        """
+        self.description = description
+        self.next_node_id = next_node_id
+        self.attribute_changes = attribute_changes or {}
