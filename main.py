@@ -2,13 +2,13 @@ from classes import StoryTree, GameSession, Character, SaveManager, FileParser
 
 def main():
     # Load story from a formatted file (example JSON)
-    with open("story.json", "r", encoding="utf-8") as f:
+    with open("TestText.yaml", "r", encoding="utf-8") as f:
         file_content = f.read()
 
     story_tree = FileParser.parse_text_to_storytree(file_content)
 
     # Initialize character with default attributes
-    main_character = Character(name="Hero", attributes={"health": 100, "mana": 50})
+    main_character = Character(name="Hero", attributes={"health": 10, "Gold": 50})
 
     # Initialize game session with the tree and character
     session = GameSession(story_tree, main_character)
