@@ -1,0 +1,49 @@
+class Choice:
+    def __init__(self, description, next_node_id, attribute_changes=None):
+        """
+        description: Text shown for the choice
+        next_node_id: ID of the next StoryNode in the tree after this choice
+        attribute_changes: dict of character attribute changes {attr: delta}
+        """
+        self.description = description
+        self.next_node_id = next_node_id
+        self.attribute_changes = attribute_changes or {}
+
+class StoryNode:
+    def __init__(self, node_id, text, choices=None, checkpoint=False):
+        """
+        node_id: Unique identifier for this story node
+        text: Narrative text of the node
+        choices: list of Choice objects
+        checkpoint: Boolean flag if this node is a checkpoint
+        """
+        self.node_id = node_id
+        self.text = text
+        self.choices = choices or []
+        self.checkpoint = checkpoint
+
+    def add_choice(self, choice):
+        self.choices.append(choice)
+
+class Character:
+    def __init__(self, name, attributes=None):
+        """
+        name: Name of the main character
+        attributes: Dictionary of attribute name to value (e.g. {'mana': 50, 'health': 100})
+        """
+        self.name = name
+        self.attributes = attributes or {}
+
+    def modify_attribute(self, attr, amount):
+        """Add or subtract amount from attribute attr"""
+        if attr in self.attributes:
+            self.attributes[attr] += amount
+        else:
+            self.attributes[attr] = amount
+
+class Checkpoint:
+    def __init__(self, node_id):
+        """
+        node_id: StoryNode ID that this checkpoint refers to
+        """
+        self.node_id = node_id
