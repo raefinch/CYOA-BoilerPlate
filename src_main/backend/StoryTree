@@ -1,0 +1,108 @@
+import json
+
+class StoryTree:
+    def __init__(self):
+        self.nodes = {}  # Dict of node_id: StoryNode
+
+    def add_node(self, node):
+        self.nodes[node.node_id] = node
+
+    def get_node(self, node_id):
+        return self.nodes.get(node_id)
+
+    def load_from_file(self, filepath):
+        """
+        Loads story nodes from a JSON formatted file with nodes and choices.
+        This is an example format and method; actual format can differ.
+        """
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for node_data in data["nodes"]:
+            node = StoryNode(
+                node_id=node_data["id"],
+                text=node_data["text"],
+                checkpoint=node_data.get("checkpoint", False)
+            )
+            for choice_data in node_data.get("choices", []):
+                choice = Choice(
+                    description=choice_data["description"],
+                    next_node_id=choice_data["next_node_id"],
+                    attribute_changes=choice_data.get("attribute_changes")
+                )
+                node.add_choice(choice)
+            self.add_node(node)
+
+class GameSession:
+    def __init__(self, story_tree, character):
+        self.story_tree = story_tree
+        self.character = character
+        self.current_node_id = None
+        self.checkpoints = []
+
+    def start(self, start_node_id):
+        self.current_node_id = start_node_id
+
+    def choose(self, choice_index):
+        current_node = self.story_tree.get_node(self.current_node_id)
+        if not current_node or choice_index >= len(current_node.choices):
+            raise ValueError("Invalid choice index")
+
+        choice = current_node.choices[choice_index]
+
+        # Apply attribute changes to character
+        for attr, delta in choice.attribute_changes.items():
+            self.character.modify_attribute(attr, delta)
+
+        # Move to next node
+        self.current_node_id = choice.next_node_id
+
+        # If this node is checkpoint, save it
+        next_node = self.story_tree.get_node(self.current_node_id)
+        if next_node and next_node.checkpoint:
+            self.checkpoints.append(self.current_node_id)
+
+    def get_current_text(self):
+        node = self.story_tree.get_node(self.current_node_id)
+        return node.text if node else ""
+
+    def save(self):
+        # Implement save logic, e.g. serialize current state to file or DB
+        # Example:
+        return {
+            "current_node_id": self.current_node_id,
+            "character_attributes": self.character.attributes,
+            "checkpoints": self.checkpoints,
+        }
+
+    def load(self, saved_data):
+        self.current_node_id = saved_data["current_node_id"]
+        self.character.attributes = saved_data["character_attributes"]
+        self.checkpoints = saved_data["checkpoints"]
+
+class FileParser:
+    @staticmethod
+    def parse_text_to_storytree(file_content):
+        """
+        Parses a formatted text file content into a StoryTree instance.
+        The exact parsing logic depends on the text format decided.
+        """
+        # Placeholder example for a simple text format parsing:
+        # Could parse JSON, YAML, or custom markup
+        # For the example, expect JSON-like structure in string
+        data = json.loads(file_content)
+        tree = StoryTree()
+        for node_data in data["nodes"]:
+            node = StoryNode(
+                node_id=node_data["id"],
+                text=node_data["text"],
+                checkpoint=node_data.get("checkpoint", False)
+            )
+            for choice_data in node_data.get("choices", []):
+                choice = Choice(
+                    choice_data["description"],
+                    choice_data["next_node_id"],
+                    choice_data.get("attribute_changes", {})
+                )
+                node.add_choice(choice)
+            tree.add_node(node)
+        return tree
