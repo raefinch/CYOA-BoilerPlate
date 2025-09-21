@@ -1,10 +1,8 @@
-B
-<<<<<<< HEAD
 # CYOA-Boilerplate
 A boilerplate to help users easily create their own choose your own adventure app
 
 
-How to Use
+### How To:
 This application is designed to allow users to create and play interactive choose-your-own-adventure stories with ease. Follow these steps to get started:
 
 Upload Your Story File
@@ -22,51 +20,61 @@ If the character fails or dies, the story will automatically return to the last 
 Save and Load
 Users can save their progress multiple times for different playthroughs and load them later to continue the story.
 
+## Story Parser How to 
+This script parses a plain text file, such as a novel or a story, and converts it into a structured YAML format. It uses regular expressions (re) to identify chapters and player choices within the text. The output is a YAML file that represents the story's flow, which can be useful for developing text-based adventure games or other interactive narrative applications.
 
+**Script overview**
 
-Story Parser How to Use
-This Python script converts a plain text novel file into a structured YAML file that represents the interactive story as chapters with choices. The YAML output can then be used to build the tree-based adventure in your app.
+The script includes two main functions and an execution block:
 
-Prerequisites
-Python 3.x installed
-PyYAML package installed 
+parse_text_to_structure(text): This function takes the raw text of a novel as input. It finds all chapters and, for each chapter, identifies the main narrative block and any numbered or bulleted choices. It then organizes this data into a Python dictionary.
 
-Steps
-Prepare your novel text file
-Format your novel so that chapters begin with a heading like Chapter 1 or CHAPTER I.
-Choices inside chapters should be listed as numbered or bulleted lines (e.g., 1. Choice text, - Choice text).
+save_structure_as_yaml(structure, filename): This function takes the Python dictionary created by the parsing function and writes it to a YAML file with the specified filename.
 
-Place the novel file
-Put your novel text file in the project directory, e.g., novel.txt.
+### Technical details
 
-Run the script
-Execute the provided Python script:
+**How text is parsed**
 
-bash
-python parse_novel_to_yaml.py
-The script will parse chapters and choices, and output story.yaml file in the same directory.
+**Please look at the test text file to know how to format**
 
-Check the output YAML
-Open story.yaml to verify the structure. You should see sections for each chapter with narrative text and a list of choices.
+The script uses the following methods to identify and extract story elements:
+Chapter recognition: It uses the regular expression to find chapter headings. This pattern can match "Chapter 1", "CHAPTER I", and other variations.
 
-Integrate YAML into your app
-Use the generated YAML file as input to your app’s parser, which transforms it into the node-based tree structure for gameplay.
+Text extraction: The content of each chapter is captured by the regex and is divided into narrative and choices.
+Choice identification: The script uses the regex to find choices, which can be formatted with numbers (e.g., "1. Go left") or bullets (e.g., "- Go right").
 
-Customization
-If your novel’s formatting differs, adjust the regex patterns in the script accordingly (e.g., chapter headings or choice formats).
+Structure creation: The parsed data is organized into a nested Python dictionary. Each chapter is a top-level key (chapter_1, chapter_2, etc.), and its value is another dictionary containing the narrative text and a list of identified choices.
 
-Add attribute effects, outcomes linking, or checkpoints manually or extend the script to parse those from your novel.
+Outcome placeholders: For each choice, the script creates a placeholder next key (e.g., "next": "chapter_1_choice1") to indicate a future outcome, though it does not automatically link to the correct next chapter.
 
-Example Output Snippet
-text
-chapter_1:
-  text: "You awaken in a dark forest. What do you do?"
-  choices:
-    - option: "Use the sword"  -> chapter_1_choice1
-    - option: "Cast magic" -> chapter_1_choice2
+**YAML output structure**
+The resulting YAML file will have the following structure for each chapter:
+
+    chapter_1:
+      text: You awaken in a dense, mysterious forest. The morning mist conceals hidden
+        dangers, but also whispers of adventure.
+      choices:
+      - option: Take the sword lying next to you.
+        next: chapter1_sword
+      - option: Cast a protective spell from your spellbook.
+        next: chapter1_spell
+    chapter_2:
+      text: Clutching your sword, you push forward through the thick underbrush. Shadows
+        shift and unseen creatures watch.
+      choices:
+      - option: Follow the narrow path deeper into the woods.
+        next: chapter2_woods
+      - option: Climb a tree to survey your surroundings.
+        next: chapter2_tree
+    chapter_3:
+      text: You raise your hands and recite the incantation. A glow surrounds you, warming
+        your spirit but draining your mana.
+      choices:
+      - option: Use the magic to illuminate the path
+        next: chapter3_spell
+      - option: Save your energy and tread carefully.
+        next: chapter3_careful
     
-This guide helps users quickly understand how to run your script, prepare input files, and how the output fits into the overall app development workflow.
-=======
-# Boiler-Plate
-A boilerplate to help users easily create their own choose your own adventure app
->>>>>>> 03946c3ba1e9245c553a25a85d5db45bd1e3669b
+      ... and so on for each chapter
+
+# Next Section
