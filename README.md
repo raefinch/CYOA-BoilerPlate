@@ -49,6 +49,7 @@ Outcome placeholders: For each choice, the script creates a placeholder next key
 The resulting YAML file will have the following structure for each chapter:
 
 chapter_1:
+
   text: You awaken in a dense, mysterious forest. The morning mist conceals hidden dangers, but also whispers of adventure.
   
   choices:
@@ -62,6 +63,7 @@ chapter_1:
      next: chapter1_spell
 
 chapter_2:
+
   text: Clutching your sword, you push forward through the thick underbrush. Shadows
     shift and unseen creatures watch.
   
