@@ -1,0 +1,159 @@
+[33mcommit aa47719b65f8aad53c53e5eca3e16727ad3c95be[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Rae Finch <raefincherotica@gmail.com>
+Date:   Sun Sep 21 15:11:15 2025 -0600
+
+    Add all initial project files
+
+[33mcommit 39cf97d3b7184556dc2bdbdc687250ec49d3951d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:46:21 2025 -0600
+
+    Rename Character to Character.py
+    
+    Changed to .py
+
+[33mcommit d11c776fa39f4c2c98d63d9266832d97378c2f02[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:45:34 2025 -0600
+
+    Create TestText.txt
+    
+    Creating Text file to pull from as well as an example/test file
+
+[33mcommit 9589935c1e8b767b7932db4bdb3d2ddaf4731039[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:43:08 2025 -0600
+
+    Update README.md
+    
+    Updated readme with an explanation on how to use
+
+[33mcommit 7efdb2fdcad1c62e2ff43e09ab1ab760b5c79f61[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:26:53 2025 -0600
+
+    Create text_parser.py
+    
+    Creating TextParser
+
+[33mcommit 60416e7c15f6b3f52e242b8c411c7bd3adc12f3c[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:19:23 2025 -0600
+
+    Create FileParser
+    
+    Made FileParser its own class
+
+[33mcommit b1c957c19f4b3fa35de55ab1b83dc15880d510b3[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:18:56 2025 -0600
+
+    Update StoryTree
+    
+    Made FileParser its own file
+
+[33mcommit 40456681c309e307c46d6c8a9bced81cbd65c019[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:18:26 2025 -0600
+
+    Create GameSession
+    
+    Made GameSession its own File
+
+[33mcommit 79d2ed447b6e5009ca3c9d3e9e6746c95286c430[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:17:59 2025 -0600
+
+    Update StoryTree
+    
+    Made GameSession its own file
+
+[33mcommit 36b1e21a1257b60e0bcef49bf66f2f9ad3c292b5[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:17:22 2025 -0600
+
+    Create Checkpoint
+    
+    Made checkpoint its own file
+
+[33mcommit 3f7a59002ce7d0e5e5f95475307d8d022a6de46e[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:17:05 2025 -0600
+
+    Update Choice
+    
+    Made Checkpoint its own file
+
+[33mcommit 8c51b9843da11c45e2abaab4552ae07a480b7aaf[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:16:33 2025 -0600
+
+    Create Character
+    
+    Created Character its own class
+
+[33mcommit a5565b398fb7beaff4ef56b045527c1d469632cf[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:16:11 2025 -0600
+
+    Update Choice
+    
+    Moved Character to It's own Class
+
+[33mcommit c4477a3f6822bdcbbf7b81444fad4e735120f707[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:15:47 2025 -0600
+
+    Update Choice
+    
+    Moved StoryChoice to it's own file
+
+[33mcommit 8e2c4b4d85042b2760f53b08868ca6047f375da8[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:15:21 2025 -0600
+
+    Create StoryNode
+
+[33mcommit bbd7d351b99237bd6fa39fde37c12e843e5394da[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:14:50 2025 -0600
+
+    Create Choice
+
+[33mcommit c8d1d77cfff27b4c40c90e165c7bd62e9b6f4b64[m
+Merge: 877ba85 146aefc
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:11:05 2025 -0600
+
+    Merge pull request #2 from raefinch/raefinch-create-storyTree
+    
+    Create StoryTree
+
+[33mcommit 146aefce6b5211fb7c0c9e4662a81eb0c3b604d5[m[33m ([m[1;31morigin/raefinch-create-storyTree[m[33m)[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:10:50 2025 -0600
+
+    Create StoryTree
+
+[33mcommit 877ba8556b53d85addc929f910404a68c18e30c8[m
+Merge: 3c85e03 febb394
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:07:31 2025 -0600
+
+    Merge pull request #1 from raefinch/raefinch-patch-1
+    
+    Create main.py
+
+[33mcommit febb394cead2661c9b4f9bdfde70e00f5c2dad64[m[33m ([m[1;31morigin/raefinch-patch-1[m[33m)[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 14:07:10 2025 -0600
+
+    Create main.py
+    
+    Imports the classes and creates the objects for the story
+
+[33mcommit 3c85e03bb79120292b94244bb4d53d7e4fcd1ca5[m
+Author: raefinch <101291740+raefinch@users.noreply.github.com>
+Date:   Sun Sep 21 13:56:38 2025 -0600
+
+    Initial commit
