@@ -24,46 +24,35 @@ Users can save their progress multiple times for different playthroughs and load
 
 
 
-Story Parser How to Use
-This Python script converts a plain text novel file into a structured YAML file that represents the interactive story as chapters with choices. The YAML output can then be used to build the tree-based adventure in your app.
-
-Prerequisites
-Python 3.x installed
-PyYAML package installed 
-
-Steps
-Prepare your novel text file
-Format your novel so that chapters begin with a heading like Chapter 1 or CHAPTER I.
-Choices inside chapters should be listed as numbered or bulleted lines (e.g., 1. Choice text, - Choice text).
-
-Place the novel file
-Put your novel text file in the project directory, e.g., novel.txt.
-
-Run the script
-Execute the provided Python script:
-
-bash
-python parse_novel_to_yaml.py
-The script will parse chapters and choices, and output story.yaml file in the same directory.
-
-Check the output YAML
-Open story.yaml to verify the structure. You should see sections for each chapter with narrative text and a list of choices.
-
-Integrate YAML into your app
-Use the generated YAML file as input to your app’s parser, which transforms it into the node-based tree structure for gameplay.
-
-Customization
-If your novel’s formatting differs, adjust the regex patterns in the script accordingly (e.g., chapter headings or choice formats).
-
-Add attribute effects, outcomes linking, or checkpoints manually or extend the script to parse those from your novel.
-
-Example Output Snippet
-text
+##Story Parser How to Use
+This script parses a plain text file, such as a novel or a story, and converts it into a structured YAML format. It uses regular expressions (re) to identify chapters and player choices within the text. The output is a YAML file that represents the story's flow, which can be useful for developing text-based adventure games or other interactive narrative applications.
+Script overview
+The script includes two main functions and an execution block:
+parse_text_to_structure(text): This function takes the raw text of a novel as input. It finds all chapters and, for each chapter, identifies the main narrative block and any numbered or bulleted choices. It then organizes this data into a Python dictionary.
+save_structure_as_yaml(structure, filename): This function takes the Python dictionary created by the parsing function and writes it to a YAML file with the specified filename.
+if __name__ == "__main__":: This block demonstrates the script's usage. It reads text from a file named TestText.txt, processes it, and saves the output to a new file named TestText.yaml.
+Technical details
+How text is parsed
+The script uses the following methods to identify and extract story elements:
+Chapter recognition: It uses the regular expression ^Chapter\s+(\d+|[IVXLC]+)\s*$ to find chapter headings. This pattern can match "Chapter 1", "CHAPTER I", and other variations.
+Text extraction: The content of each chapter is captured by the regex and is divided into narrative and choices.
+Choice identification: The script uses the regex ^(?:\d+|[-*])\s+(.*) to find choices, which can be formatted with numbers (e.g., "1. Go left") or bullets (e.g., "- Go right").
+Structure creation: The parsed data is organized into a nested Python dictionary. Each chapter is a top-level key (chapter_1, chapter_2, etc.), and its value is another dictionary containing the narrative text and a list of identified choices.
+Outcome placeholders: For each choice, the script creates a placeholder next key (e.g., "next": "chapter_1_choice1") to indicate a future outcome, though it does not automatically link to the correct next chapter.
+YAML output structure
+The resulting YAML file will have the following structure for each chapter:
+yaml
 chapter_1:
-  text: "You awaken in a dark forest. What do you do?"
+  text: |
+    # The narrative text for the chapter goes here.
+    # It will contain multiple lines.
   choices:
-    - option: "Use the sword"  -> chapter_1_choice1
-    - option: "Cast magic" -> chapter_1_choice2
+  - option: Choice text 1
+    next: chapter_1_choice1
+  - option: Choice text 2
+    next: chapter_1_choice2
+chapter_2:
+  # ... and so on for each chapter
     
 This guide helps users quickly understand how to run your script, prepare input files, and how the output fits into the overall app development workflow.
 =======
