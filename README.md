@@ -35,6 +35,8 @@ save_structure_as_yaml(structure, filename): This function takes the Python dict
 
 **How text is parsed**
 
+**Please look at the test text file to know how to format**
+
 The script uses the following methods to identify and extract story elements:
 Chapter recognition: It uses the regular expression to find chapter headings. This pattern can match "Chapter 1", "CHAPTER I", and other variations.
 
