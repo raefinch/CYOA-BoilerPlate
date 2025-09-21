@@ -52,9 +52,8 @@ yaml
 chapter_1:
 
   text:
-
-    The narrative text for the chapter goes here. 
-    It will contain multiple lines.
+  The narrative text for the chapter goes here. 
+  It will contain multiple lines.
 
   choices:
 
