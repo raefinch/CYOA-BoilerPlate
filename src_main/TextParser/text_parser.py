@@ -43,8 +43,8 @@ def save_structure_as_yaml(structure, filename):
 
 # Usage example
 if __name__ == "__main__":
-    with open('novel.txt', 'r', encoding='utf-8') as f:
+    with open('TestText.txt', 'r', encoding='utf-8') as f:
         novel_text = f.read()
     story_data = parse_text_to_structure(novel_text)
-    save_structure_as_yaml(story_data, 'story.yaml')
+    save_structure_as_yaml(story_data, 'TestText.yaml')
     print("YAML file created successfully.")
