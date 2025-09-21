@@ -1,3 +1,5 @@
+B
+<<<<<<< HEAD
 # CYOA-Boilerplate
 A boilerplate to help users easily create their own choose your own adventure app
 
@@ -64,3 +66,7 @@ chapter_1:
     - option: "Cast magic" -> chapter_1_choice2
     
 This guide helps users quickly understand how to run your script, prepare input files, and how the output fits into the overall app development workflow.
+=======
+# Boiler-Plate
+A boilerplate to help users easily create their own choose your own adventure app
+>>>>>>> 03946c3ba1e9245c553a25a85d5db45bd1e3669b
