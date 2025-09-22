@@ -2,19 +2,19 @@ Chapter 1
 
 You awaken in a dense, mysterious forest. The morning mist conceals hidden dangers, but also whispers of adventure.
 
-1. Take the sword lying next to you.
-2. Cast a protective spell from your spellbook.
+1. Take the sword lying next to you. (chapter1_sword)
+2. Cast a protective spell from your spellbook. (chapter1_spell)
 
 Chapter 2
 
 Clutching your sword, you push forward through the thick underbrush. Shadows shift and unseen creatures watch.
 
-- Follow the narrow path deeper into the woods.
-- Climb a tree to survey your surroundings.
+- Follow the narrow path deeper into the woods. (chapter2_woods)
+- Climb a tree to survey your surroundings. (chapter2_tree)
 
 Chapter 3
 
 You raise your hands and recite the incantation. A glow surrounds you, warming your spirit but draining your mana.
 
-1. Use the magic to illuminate the path.
-2. Save your energy and tread carefully.
+1. Use the magic to illuminate the path (chapter3_spell)
+2. Save your energy and tread carefully. (chapter3_careful)
